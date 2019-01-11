@@ -1,0 +1,52 @@
+extends ../layoutGlCates.jade
+
+block content
+    .row
+          h2.darkbule Video Types List
+          h3
+            a.btn.btn-success(target-"_blank",href="/gl/movieCate/add") New Type
+          table.table.table-hover.table-bordered
+            thead
+              tr
+                th Video Type
+                th Average TI
+                th Average SI
+                th Videos Count
+                th Setup Time
+                //- th 类别更新时间
+                th Update
+                th Delete
+             tbody
+               each item in movieCates
+                 tr(class="item-id-#{item._id}")
+                   td
+                    a(target="_blank",href="../gl/movieCateInfo/#{item._id}" style="text-decoration: underline") #{item.title}
+                   td #{item.ti}
+                   td #{item.si}
+                   td #{item.movies.length}
+                   td #{moment(item.meta.createAt.toString()).format('YYYY/MM/DD HH:mm:ss')} 
+                   //- td #{moment(item.meta.updateAt.toString()).format('YYYY/MM/DD HH:mm:ss')}
+                   td: a.btn.btn-primary(target-"_blank",href="/gl/movieCate/update/#{item._id}") Update
+                   td: button.btn.btn-danger.del(type="button",data-id="#{item._id}" onclick="showModal('#{item._id}')") Delete
+                      
+            #delModal.modal.fade
+              .modal-dialog
+                .modal-content
+                  .modal-header
+                    button.close(type="button" data-dismiss="modal" aria-label="Close")
+                      span(aria-hidden="true") &times;
+                    h4.modal-title
+                      Modal It will be removed permanently. Are you sure you want to proceed? 
+                  .modal-body
+                    p
+                      One Notice: If family is deleted, all videos under this family will be deleted.
+                  .modal-footer
+                    button.btn.btn-default(type="button" data-dismiss="modal" )
+                      Close Cancel
+                    button#doBtn.btn.btn-primary(type="button" onclick="delMovieCate()")
+                      Save Delete
+                    
+                    
+
+          script(src="/js/movieCate.js")
+

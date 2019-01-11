@@ -1,0 +1,358 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible",content="IE=edge")
+    meta(view="viewport",content="width=device-width,initial-scale=1")
+    title QoECenter
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+    //- <link href="css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- add by lxd 2017/01/07 -->
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style1.css">
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+
+    <!-- Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
+    script(src="js/jquery.min.js")
+    script(src="/js/index.js")
+    style
+      .main{width:"100%";height:auto;}
+      .left{width:"50%";height:auto;}
+      .right{width:"50%";height:auto;margin-left:10px;}
+      .left,#right{float:left;}
+  body
+    header#fh5co-header.fh5co-cover(style="background-image:url(img/bg1-1.jpg);")
+      //- div.overlay
+      div.container
+        div.row
+          div.col-md-10.col-md-offset-1.text-center
+            div.display-t
+              div.display-tc.animate-box(data-animate-effect="fadeIn")
+                h1 QoECenter
+                h2 A Visualized Platform of QoE Evaluation Platform for Video Streaming Services
+                p
+                  a.btn.btn-default(href="/gl/movie/add") Administrator
+                p
+                  a.btn.btn-default(href="/guestIndex") Guest
+
+    div
+      div.container
+        div.row
+          div#fh5co-features-2
+            div.col-feature-12
+              div.row
+                div.col-md-12.fh5co-heading.animate-box
+              div.row
+                div.col-md-6.animate-box(data-animate-effect="fadeInRight")
+                  div.feature-image.col-md-5
+                    video#video(src="/baseMovie/introduction.mp4" style="width:75%;margin:0 0 0 0;" controls="controls" preload="preload")
+                div.col-md-6.animate-box(data-animate-effect="fadeInLeft")
+                  div
+                    div.context
+                      h2 Core Features
+                      div(style="padding-left: 40px;")
+                        div
+                          span(style="float:left;")
+                            i.fa.fa-circle.silver
+                          div.indexh2
+                            p Realize configurable QoS parameters of streaming video services 
+
+                        div
+                          span(style="float:left;")
+                            i.fa.fa-circle.silver
+                          div.indexh2
+                            p Simulate the streaming video lifecycle
+
+                        div
+                          span(style="float:left;")
+                            i.fa.fa-circle.silver
+                          div.indexh2
+                            p Monitor the environment and quality data in system, terminal, and end user
+
+                        div
+                          span(style="float:left;")
+                            i.fa.fa-circle.silver
+                          div.indexh2
+                            p Provide various objective evaluation algorithms and methods in real time
+
+                        div
+                          span(style="float:left;")
+                            i.fa.fa-circle.silver
+                          div.indexh2
+                            p Provide subjective QoE evaluation metrics on customized aspects of user perception
+
+                        div
+                          span(style="float:left;")
+                            i.fa.fa-circle.silver
+                          div.indexh2
+                            p Provide DASH easy-to-use DASH content generation and display tool
+
+                        div
+                          span(style="float:left;")
+                            i.fa.fa-circle.silver
+                          div.indexh2
+                            p Provide all functional capabilities through a web based visual interface
+                        p
+                        a.btn.btn-primary.popup-vimeo(href="/moreabout") More Details
+                          div.overlay
+    div#fh5co-portfolio
+      div.container
+        div.row
+          div.project.content-section-a
+            div.col-md-6.col-md-push-6.animate-box(data-animate-effect="fadeInRight")
+              img.img-responsive(src="img/img2.jpg" alt="work")
+            div.col-md-6.col-md-pull-6.animate-box(data-animate-effect="fadeInLeft")
+              div.context
+                h2 Contributions
+                ul.list-nav
+                  span(style="float:left;")
+                    i.fa.fa-circle.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 400;color: #696969;") Development of a data acquisition and analysis platform for video QoE:
+                      font(style="font-weight: 200;color: #808080;")  track video viewing experiences in real time
+                  span(style="float:left;")
+                    i.fa.fa-circle.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 400;color: #696969;") Development and evaluation of QoE metrics:
+                      font(style="font-weight: 200;color: #808080;")  supports multiple algorithms of objective video quality evaluation, and provides subjective QoE evaluations based on user opinions on customized video presentation
+                  span(style="float:left;")
+                    i.fa.fa-circle.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 400;color: #696969;") Development of a DASH enabled content generation tool and web client for video adaption
+                  //-     font(style="font-weight: 200;color: #808080;")  processing data logic for simulating the whole video process from video source to end user.
+                  //- span(style="float:left;")
+                  //-   i.fa.fa-circle.silver
+                  //- div.indexh2
+                  //-   p(style="text-align:justify; text-justify:inter-ideograph;")
+                  //-     font(style="font-weight: 400;color: #696969;") QoECenter Core Module: 
+                  //-     font(style="font-weight: 200;color: #808080;")  three core modules of Video Source Level, System Process Level, and End User Level for parameter control, data acquisition and analysis.
+                  //- span(style="float:left;")
+                  //-   i.fa.fa-circle.silver
+                  //- div.indexh2
+                  //-   p(style="text-align:justify; text-justify:inter-ideograph;")
+                  //-     font(style="font-weight: 400;color: #696969;") Cloud Source:
+                  //-     font(style="font-weight: 200;color: #808080;")  a collection of cloud host, dataset server, and cloud server for supplying the storage capacity and computing capacity.
+          div.project
+            div.col-md-6.animate-box(data-animate-effect="fadeInRight")
+              img.img-responsive(src="img/img3.png" alt="work")
+            div.col-md-6.animate-box(data-animate-effect="fadeInLeft")
+              div
+                div.context
+                  h2 System Block Diagram
+                  ul.list-nav
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font(style="font-weight: 400;color: #696969;") Terminal and End User:
+                        font(style="font-weight: 200;color: #808080;")  records terminal information, monitors user-viewing activities, and collects users’ ratings
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font(style="font-weight: 400;color: #696969;") Environment and Interface:
+                        font(style="font-weight: 200;color: #808080;")  the software framework and runtime environment for the user terminal
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font(style="font-weight: 400;color: #696969;") QoECenter Controller
+                        font(style="font-weight: 200;color: #808080;")  the target end-to-end video distribution flows from video source to end user terminal
+
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font(style="font-weight: 400;color: #696969;") QoECenter Core Modules
+                        font(style="font-weight: 200;color: #808080;")  three levels of parameter control, data acquisition, and data-driven analysis per the streaming video lifecycle
+
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font(style="font-weight: 400;color: #696969;") Cloud Resources
+                        font(style="font-weight: 200;color: #808080;")  a collection of scalable networking, compute, storage, and data resources
+
+          div.project.content-section-a
+            div.col-md-6.col-md-push-6.animate-box(data-animate-effect="fadeInRight")
+              img.img-responsive(src="img/img4.png" alt="work")
+            div.col-md-6.col-md-pull-6.animate-box(data-animate-effect="fadeInLeft")
+              div.context
+                h2 Web Client
+                ul.list-nav
+                  span(style="float:left;")
+                    i.fa.fa-circle.silver
+                  div.indexh2
+                    p Video list recommendation
+                  span(style="float:left;")
+                    i.fa.fa-circle.silver
+                  div.indexh2
+                    p User data & user-viewing activities recoding
+                  span(style="float:left;")
+                    i.fa.fa-circle.silver
+                  div.indexh2
+                    p Ratings on customized aspects of user perception
+                  span(style="float:left;")
+                    i.fa.fa-circle.silver
+                  div.indexh2
+                    p A dash-enable web client allowing for adaptive bitrate streaming of video
+
+          div.project
+            div.col-md-6.animate-box(data-animate-effect="fadeInRight")
+              img.img-responsive(src="img/img3.jpg" alt="work")
+            div.col-md-6.animate-box(data-animate-effect="fadeInLeft")
+              div
+                div.col-md-offset-1
+                  div.indexh2
+                    h2 Objective Video Quality Evaluation
+                  div
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p Peak Signal to Noise Ratio (PSNR)
+
+                  div
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p Structural Similarity Index Metric (SSIM)
+
+                  div
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p Video Quality Measurement (VQM)
+
+                  div.indexh2
+                    p1 QoECenter provides analysis results of multiple algorithms of objective video quality evaluation in real time.
+
+          div.project
+            div.col-md-6.col-md-push-6.animate-box(data-animate-effect="fadeInRight")
+              div.col-md-offset-1
+                script(type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&d=AtwnonysoTwsiXaU6lBxuvsG4D1K7CayC2po0LDMmj0")
+            div.col-md-6.col-md-pull-6.animate-box(data-animate-effect="fadeInLeft")
+              div
+                div.col-md-offset-1
+                  div.indexh2
+                    h2 All the Data You Need
+                  div
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p Source Analysis for Video Information
+
+                  div
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p QoS Parameter Setting for Encoding and Network
+
+                  div
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p DASH Content Generation Parameters & MPD Files
+
+                  div
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p Objective Video Quality Evaluation & Subjective User Ratings
+
+                  div
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p User and Terminal Information
+
+                  div.indexh2(style="text-align:justify; text-justify:inter-ideograph;")
+                    p1 QoECenter exposes visualized interfaces for parameter control and data acquisition from video source level, system process level and end user level, and it provides data analysis consisting of both objective and subjective QoE evaluation.
+
+          div.project
+            div.col-md-12.animate-box(data-animate-effect="fadeInRight")
+              div
+                div(style="padding-left: 40px;")
+                  div.indexh2
+                    h2 Publications
+                  div
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p Lingyan Zhang, Shangguang Wang, Fangchun Yang, Rong N. Chang. Qoecenter: A Visualized Platform for QoE Evaluation Of Streaming Video Services, IEEE ICWS 2017, research track, to appear.
+                  div
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p Lingyan Zhang, Shangguang Wang*, Raymond K. Wong, Fangchun Yang, and Rong N. Chang. Cognitively Adjusting Imprecise User Preferences for Service Selection. IEEE Transactions on Network and Service Management, no.13, vol. 13, pp. 1-13.
+                  div
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p Lingyan Zhang, Qibo Sun, Shangguang Wang, Sen Su, Fangchun Yang. Towards Video Quality of Experience and Selective Attention: A Subtitle-Based Measurement Study. IEEE SCC 2016, p. 872-875.
+                  div
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p Lingyan Zhang, Mingzhe Yang, Yan Guo and Shangguang Wang, "Service selection and recommendation in integrated network environment", Book Chapter, IET Publisher, Stevenage, United Kingdom, 2017, ISBN: 978-1-78561-176-6. http://www.theiet.org/resources/books/telecom/Naas.cfm.
+
+          div.project.content-section-a
+            div.col-md-6.animate-box(data-animate-effect="fadeInRight")
+              img.img-responsive(src="img/img5.jpg" alt="work")
+            div.col-md-6.animate-box(data-animate-effect="fadeInLeft")
+              div.context
+                h2 Affiliation and Foundation
+                ul.list-nav
+                  span(style="float:left;")
+                    i.fa.fa-circle.silver
+                  div.indexh2
+                    p State Key Laboratory of Networking and Switching Technology
+                    p Beijing University of Posts and Telecommunications, China
+                  span(style="float:left;")
+                    i.fa.fa-circle.silver
+                  div.indexh2(style="text-align:justify; text-justify:inter-ideograph;")
+                    p “Research on Service Selection Mechanism in Integrated Network Environment”, Supported by the National Natural Science Foundation of China (Grant No. 61472047).
+                  span(style="float:left;")
+                    i.fa.fa-circle.silver
+                  div.indexh2
+                    p Contact us: <a class="email-blue" target="_blank" href="/lingyanzhang">Ph.D. Lingyan Zhang</a>，<a class="email-blue" target="_blank" href="http://www.sguangwang.com/">Prof. Shangguang Wang</a>
+
+        //- div.row.animate-box
+        //-   div.col-md-8.col-md-offset-2.text-center.fh5co-heading
+        //-     h2 
+        //-     h2 Finished Project
+        //-     p Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.
+
+        div.row.copyright
+          div.col-md-12.text-center
+            p.copyright.ext-muted.small Copyright &copy; QoE Team of BUPT 2016-2017. All Rights Reserved
+
+    script(src="js/jquery.easing.1.3.js")
+    script(src="js/bootstrap.min.js")
+    script(src="js/jquery.waypoints.min.js")
+    script(src="js/jquery.countTo.js")
+    script(src="js/jquery.magnific-popup.min.js")
+    script(src="js/magnific-popup-options.js")
+    script(src="js/main.js")
+
+      

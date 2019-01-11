@@ -1,0 +1,164 @@
+extends ../guestLayout.jade
+
+block content
+	aside.left-side.sidebar-offcanvas(style="top:0;background-color:#f9f9f9;")
+		section.sidebar
+			//- img(src="/img/buptlogo1.png",alt="404-img")
+			div.user-panel(style='padding: 0 0 0 85px;background-color:#f9f9f9')
+				h2 Welcome
+			ul.sidebar-menu(style="background:#f3ebc8")
+				li.typeli(style="border-bottom:0.5px solid #ccc;")
+					a.typelist(href="/guestIndex")
+						i.fa.fa-film
+						span Recommendation
+						small.badge.pull-right.bg-green 20
+				each cat in mCates
+					li.typeli(style="border-bottom:0.5px solid #ccc;")
+						a.typelist(href="/guestIndex/#{cat._id}")
+							i.fa.fa-film
+							span #{cat.title}
+							small.badge.pull-right.bg-green #{cat.movies.length}
+	aside.right-side(onload="submitUserInfo()")
+		input#movieID(type="hidden",name="movie[_id]",value=movie._id)
+		#ShowDelay.light.input(type="hidden",name="movie[showdelay]",style="display:none" value="#{movie.showdelay}") #{movie.showdelay}
+		section.content-header
+			h1.darkbule
+				|MovieDetail
+				small Video Comment
+		section.content
+			div.row
+				section.col-lg-12.connectedSortable
+					div.box.box-info
+						div.box-header
+							i.fa.fa-angle-down
+							h3.box-title(style="color: #000")
+								each cat in mCates 
+									if(cat.id == movie.movieCates)
+										| #{cat.title} > #{movie.title}
+						div.box-body
+							div.row
+								div.col-md-6.col-lg-8(style="padding: 5px 15px 5px 25px;float:left;")
+									video#video(data-dashjs-player autoplay src="./#{movie.movie}" style="width:100%" height=450 controls="controls" preload="preload")
+									
+									div.inner(style="font-size: 14px;")
+										span(style="margin-bottom:2px; margin-right: 20px;") 
+											<i class="fa fa-user" aria-hidden="true"></i>
+											| #{movie.pv}visitors
+										span(style="margin-bottom:2px;")
+											<i class="fa fa-clock-o" aria-hidden="true"></i>
+											| Setup Time: #{moment(movie.meta.updateAt.toString()).format('YYYY/MM/DD HH:mm:ss')}
+										p(style="margin-bottom:2px; margin-top: 12px;")
+											<i class="fa fa-book" aria-hidden="true"></i>
+											| Video Description
+										div.jumbotron(style="border-top: 0px solid #ccc; border-bottom: 0px solid #ccc; width: 100%; padding: 5px 10px; margin-bottom: 10px; background-color: #f4f4f4; border-radius: 5px;") !{movie.content}
+								div.col-lg-4(style="float:left;")
+									div.panel.panel-default
+										div.panel-heading(style="padding: 1px 15px;")
+											h4.darkbule
+												i.fa.fa-star-half-o
+												| Ratings (评分)
+										div.panel-body
+											form
+												div.form-group
+													label(for="exampleInputEmail1") Video Content (视频内容)
+													fieldset.starability-growRotate
+														input(type="radio" id="rate5-1" name="vcontent" value="5")
+														label.vcontent(score="5" for="rate5-1" title="Excellent(优秀)") 5 stars
+
+														input(type="radio" id="rate4-1" name="vcontent" value="4")
+														label.vcontent(score="4" for="rate4-1" title="Good(良好)") 4 stars
+
+														input(type="radio" id="rate3-1" name="vcontent" value="3")
+														label.vcontent(score="3" for="rate3-1" title="Fair(一般)") 3 stars
+
+														input(type="radio" id="rate2-1" name="vcontent" value="2")
+														label.vcontent(score="2" for="rate2-1" title="Poor(较差)") 2 stars
+
+														input(type="radio" id="rate1-1" name="vcontent" value="1")
+														label.vcontent(score="1" for="rate1-1" title="Bad(很差)") 1 star
+												div.form-group
+													label(for="exampleInputEmail1") Video Quality (视频质量)
+													fieldset.starability-growRotate
+														input(type="radio" id="rate5-2" name="clarity" value="5")
+														label.clarity(score="5" for="rate5-2" title="Excellent(优秀)") 5 stars
+
+														input(type="radio" id="rate4-2" name="clarity" value="4")
+														label.clarity(score="4" for="rate4-2" title="Good(良好)") 4 stars
+
+														input(type="radio" id="rate3-2" name="clarity" value="3")
+														label.clarity(score="3" for="rate3-2" title="Fair(一般)") 3 stars
+
+														input(type="radio" id="rate2-2" name="clarity" value="2")
+														label.clarity(score="2" for="rate2-2" title="Poor(较差)") 2 stars
+
+														input(type="radio" id="rate1-2" name="clarity" value="1")
+														label.clarity(score="1" for="rate1-2" title="Bad(很差)") 1 star
+												div.form-group
+													label(for="exampleInputEmail1") Video Fluency (视频流畅度)
+													fieldset.starability-growRotate
+														input(type="radio" id="rate5-3" name="loadSpeed" value="5")
+														label(for="rate5-3" title="Excellent(优秀)") 5 stars
+
+														input(type="radio" id="rate4-3" name="loadSpeed" value="4")
+														label(for="rate4-3" title="Good(良好)") 4 stars
+
+														input(type="radio" id="rate3-3" name="loadSpeed" value="3")
+														label(for="rate3-3" title="Fair(一般)") 3 stars
+
+														input(type="radio" id="rate2-3" name="loadSpeed" value="2")
+														label(for="rate2-3" title="Poor(较差)") 2 stars
+
+														input(type="radio" id="rate1-3" name="loadSpeed" value="1")
+														label(for="rate1-3" title="Bad(很差)") 1 star
+												div.form-group
+													label(for="exampleInputEmail1") Overall Satisfaction (整体满意度)
+													fieldset.starability-growRotate
+														input(type="radio" id="rate5-4" name="quality" value="5")
+														label(for="rate5-4" title="Excellent(优秀)") 5 stars
+
+														input(type="radio" id="rate4-4" name="quality" value="4")
+														label(for="rate4-4" title="Good(良好)") 4 stars
+
+														input(type="radio" id="rate3-4" name="quality" value="3")
+														label(for="rate3-4" title="Fair(一般)") 3 stars
+
+														input(type="radio" id="rate2-4" name="quality" value="2")
+														label(for="rate2-4" title="Poor(较差)") 2 stars
+
+														input(type="radio" id="rate1-4" name="quality" value="1")
+														label(for="rate1-4" title="Bad(很差)") 1 star
+												<button type="button" class="btn btn-primary" onclick="submitScore('#{movie.id}')">Submit</button>
+
+	#commentModal.modal.fade(aria-hidden="true" data-backdrop="static")
+		.modal-dialog(style="z-index: inherit;")
+			.modal-content
+				.modal-header
+					button.close(type="button" data-dismiss="modal" aria-label="Close")
+						span(aria-hidden="true") &times;
+					h4.modal-title
+						Modal Information
+				.modal-body
+					p
+						One Thanks for your ratings
+				.modal-footer
+					//- button.btn.btn-default(type="button" onclick="close()") Close
+					a.btn.btn-success(href="/guestIndex") Close
+
+	#noticeModal.modal.fade(aria-hidden="true" data-backdrop="static")
+		.modal-dialog(style="z-index: inherit;")
+			.modal-content
+				.modal-header
+					button.close(type="button" data-dismiss="modal" aria-label="Close")
+						span(aria-hidden="true") &times;
+					h4.modal-title
+						Modal Information
+				.modal-body
+					p
+						One Please make sure you complete the ratings before your submission.
+				.modal-footer
+					button.btn.btn-default(type="button" data-dismiss="modal" )
+						Close Close
+
+	script(src="/js/movieDetail.js")
+
+

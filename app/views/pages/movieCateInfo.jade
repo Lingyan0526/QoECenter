@@ -1,0 +1,123 @@
+extends ../layoutGlCates.jade
+
+block content
+    script(src="/js/movieCateAdd.js")
+    .row
+            h2.darkbule Video Type Detail
+            .form-group
+              .col-sm-12
+                legend
+            form#movieCateAddForm.form-horizontal(method="post",action="/gl/movieCate/save")
+              input(type="text",name="movieCate[_id]",value=movieCate._id, style="display: none;")
+              .form-group
+                .col-sm-12
+                  legend
+                h4.darkbule.col-sm-2.control-label(for="inputTitle") Type Name
+                .col-sm-6
+                  input#inputTitle.form-control(readonly="readonly" type="text",name="movieCate[title]",value="#{movieCate.title}")
+              .form-group
+                .col-sm-12
+                  legend
+                h3.darkbule.col-sm-3.control-label(for="inputBandwidth") TI、SI values for this Type
+              .form-group
+                h4.darkbule.col-sm-2.control-label(for="inputTitle") Average TI
+                .col-sm-2
+                  input#movieTIInput(type="input" readonly="readonly" name="movieCate[ti]" value="#{movieCate.ti}")
+                h4.darkbule.col-sm-2.control-label(for="inputTitle") Average SI
+                .col-sm-2
+                  input#movieSIInput(type="input" readonly="readonly" name="movieCate[si]" value="#{movieCate.si}")
+              .form-group
+                .col-sm-12
+                  legend
+                h3.darkbule.col-sm-2.control-label(for="inputBandwidth") TI&SI Array
+              .form-group
+                .col-sm-offset-1.col-sm-10
+                  table.table.table-hover.table-bordered(width="300")
+                    thead
+                      tr
+                        th #
+                        th TIs
+                        th SIs
+                        th Setup Time
+                        //- //- th 类别更新时间
+                        //- th Update
+                        //- th Delete
+                     tbody
+                        each item,index in tisis
+                          tr(class="item-id-#{item._id}")
+                            td #{index+1}
+                            td #{item.ti}
+                            td #{item.si}
+                            td #{moment(item.meta.createAt.toString()).format('YYYY/MM/DD HH:mm:ss')}
+              .form-group
+                .col-sm-12
+                  legend
+                h3.darkbule.col-sm-2.control-label(for="inputBandwidth") Movies Array
+              .form-group
+                .col-sm-offset-1.col-sm-10
+                  table.table.table-hover.table-bordered(width="300")
+                    thead
+                      tr
+                        th #
+                        th Title
+                        th Viewers
+                        th Setup Time
+                        //- //- th 类别更新时间
+                        //- th Update
+                        //- th Delete
+                     tbody
+                        each item,index in movies
+                          tr(class="item-id-#{item._id}")
+                            td #{index+1}
+                            td #{item.title}
+                            td #{item.pv}
+                            td #{moment(item.meta.createAt.toString()).format('YYYY/MM/DD HH:mm:ss')} 
+              //- .form-group
+              //-   .col-sm-offset-8.col-sm-2
+              //-     //- button.btn.btn-primary(type = "submitForm" style="background-color:#08c; color:#fff;") Submit
+              //-     button.btn.btn-primary(type = "button" onclick="submitForm()") Submit
+              .form-group
+                .col-sm-12
+                  legend
+                h3.darkbule.col-sm-2.control-label(for="inputBandwidth") Camera
+              .form-group
+                .col-sm-offset-1.col-sm-10
+                  table.table.table-hover.table-bordered
+                    thead
+                      tr
+                        th Name
+                        th Description
+                     tbody#dataTab
+                      tr
+                        td TI
+                        td Temporal perceptual Information
+                      tr
+                        td SI
+                        td Spatial perceptual Information
+                        
+            form(id="yuvUpForom" enctype='multipart/form-data' style="display:none")
+              input(type="file" id="yuvFileRealInput" name="resource")
+
+          #commentModal.modal.fade(aria-hidden="true" data-backdrop="static")
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span(aria-hidden="true")
+                      &times;
+                  h4.modal-title
+                    Modal Upload progress
+                .modal-body
+                  p
+                    One Ready, start uploading...
+                  .progress
+                    #pBar.progress-bar.progress-bar-success.progress-bar-striped.active(role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 1%;")
+                      span
+                        Two 1%
+
+                .modal-footer
+                  #okButton.button.btn.disabled.btn-default(type="button" data-dismiss="modal") Finish
+
+          
+
+        

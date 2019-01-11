@@ -1,0 +1,103 @@
+extends ../layoutDash.jade
+
+block content
+    .row
+      .col-md-12
+            h2.darkbule Update Video
+            h5.darkbule Edit the parameters you need ,and all parameters are optional.
+            form#NetWork.form-horizontal(method="post",action="/gl/dash/saveNetwork")
+              input(type="hidden",name="movie[_id]",value="#{movie._id}")
+              .form-group
+                .col-sm-2.control-label(for="inputTitle") Video Name
+                .col-sm-4
+                  input#inputTitle.form-control(type="text",name="movie[title]",value="#{movie.title}")
+              //- .form-group
+              //-   label.col-sm-2.control-label(for="inputCates") 视频类别
+              //-   .col-sm-6
+              //-     input#inputCates.form-control(type="text",name="mCates[title]",value="#{mCates.title}")
+              //- .form-group
+              //-   .col-sm-12
+              //-     legend
+              //-   label.col-sm-2.control-label(for="inputBandwidth") Parameters for Simulation Network
+              //- .form-group.raw
+              //-   .col-sm-2.control-label(for="inputBandwidth") Bandwidth
+              //-   .col-sm-3
+              //-     .input-group
+              //-       input#inputBandwidth.form-control(type="text",name="network[bandwidth]",value="#{network.bandwidth}", placeholder="in Mb")
+              //-       span.input-group-addon Mb           
+              //-   .col-sm-2.control-label(for="inputTimedelay") Time Delay
+              //-   .col-sm-3
+              //-     .input-group
+              //-       input#inputTimedelay.form-control(type="text",name="network[timedelay]",value="#{network.timedelay}", placeholder="in ms")
+              //-       span.input-group-addon ms
+              //- .form-group
+              //-   .col-sm-2.control-label(for="inputPacketloss") Packet Loss Rate
+              //-   .col-sm-3
+              //-     input#inputPacketloss.form-control(type="text",name="network[packetloss]",value="#{network.packetloss}")
+
+              .form-group
+                .col-sm-12
+                  legend
+                label.col-sm-2.control-label(for="inputBandwidth") Parameters for Video Attribute
+
+              .form-group
+                .col-sm-2.control-label Video Size
+              .form-group.raw
+                .col-sm-2.control-label(for="inputMVwidth") Width
+                .col-sm-3
+                  input#inputMVwidth.form-control(type="text",name="network[mvWidth]",value="#{network.mvWidth}", placeholder="")           
+                .col-sm-2.control-label(for="inputMVheight") Height
+                .col-sm-3
+                  input#inputMVheight.form-control(type="text",name="network[mvHeight]",value="#{network.mvHeight}", placeholder="")
+
+              .form-group.raw
+                .col-sm-2.control-label(for="inputMVFps") Frame Rate
+                .col-sm-3
+                  .input-group
+                    input#inputMVFps.form-control(type="text",name="network[fps]",value="#{network.fps}", placeholder="in fps")
+                    span.input-group-addon fps           
+                .col-sm-2.control-label(for="inputMVBps") Average Bitrate
+                .col-sm-3
+                  .input-group
+                    input#inputMVBps.form-control(type="text",name="network[bps]",value="#{network.bps}", placeholder="in kbps")
+                    span.input-group-addon kbps 
+
+              .form-group.raw
+                .col-sm-2.control-label(for="inputMVFps") Setup Latency
+                .col-sm-3
+                  .input-group
+                    input#inputShowdelay.form-control(type="text",name="movie[showdelay]",value="#{movie.showdelay}", placeholder="in ms")
+                    span.input-group-addon ms           
+
+              .form-group.raw
+                .col-sm-2.control-label(for="inputMVIndistinct") Sharpen Modulus
+                .col-sm-3
+                  input#inputMVIndistinct.form-control(type="text",name="network[unsharp]",value="#{network.unsharp}", placeholder="from -2.0 to 5.0")
+                .small.col-sm-4.text-muted.text-left.control-label(for="inputMVBps" font-size="11px") Notice: value range: from -2.0 to 5.0, positive:sharpen, negative:blurry.         
+
+              .form-group
+                .col-sm-offset-9.col-sm-2
+                  button.btn.btn-primary(type = "button" onclick="submitForm()") Submit
+          #commentModal.modal.fade
+                          .modal-dialog
+                            .modal-content
+                              .modal-header
+                                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                  span(aria-hidden="true")
+                                    &times;
+                                h4.modal-title
+                                  Modal Upload Progress
+                              .modal-body
+                                p
+                                  One Ready, start uploading...
+                                .progress
+                                  #pBar.progress-bar.progress-bar-success.progress-bar-striped.active(role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 1%;")
+                                    span
+                                      Two 1%
+
+                              .modal-footer
+                                //- #okButton.button.btn.disabled.btn-default(type="button" data-dismiss="modal" onclick="location.href='/gl/movie'") 确认
+                                #okButton.button.btn.disabled.btn-default(type="button" data-dismiss="modal" onclick="submitOK()") Finish
+
+          script(src="/js/setDashNetwork.js")
+        

@@ -1,0 +1,55 @@
+extends ../guestLayout.jade
+
+
+block content
+		div.wrapper.row-offcanvas-left.page1
+			aside.left-side.sidebar-offcanvas
+				section.sidebar
+					//- img(src="/img/buptlogo1.png",alt="404-img")
+					div.user-panel(style='padding: 0 0 0 85px;')
+						div.info
+							i.fa.fa-user
+							h2 Guest
+					ul.sidebar-menu
+						each cat in mCates
+							li(style="border-bottom:0.5px solid #affffe;")
+								a.typelist(href="##{cat._id}")
+									i.fa.fa-film
+									span #{cat.title}
+									small.badge.pull-right.bg-green #{cat.movies.length}
+			aside.right-side
+				section.content-header
+					h1.darkbule
+						|Homepage
+						small Videos list page
+				section.content
+					each cat in mCates
+						div.row
+							section.col-lg-12.connectedSortable
+								div.box.box-info
+									div.box-header(id='#{cat.id}')
+										i.fa.fa-film
+										h3.darkbule.box-title #{cat.title} Videos :
+									div.box-body
+										div.row
+											each mv in movies
+												if mv.movieCates == cat.id
+													div.col-lg-3.col-xs-6
+														div.small-box.bg-aqua(style="width:230px")
+															a(href="/movie/#{mv.id}")
+																img(src='movie/covers/#{mv.pic}' alt="#{mv.title}" width=230, height=150)
+															div.inner
+																p.darkbule(style="margin-top: 1px;overflow: hidden;text-overflow: ellipsis;display: box;display: -webkit-box;line-clamp: 2;-webkit-line-clamp: 2;-webkit-box-orient: vertical;") #{mv.title}
+																p.darkbule(style="margin-bottom:2px;") 
+																	<i class="fa fa-user" aria-hidden="true"></i>
+																	| #{mv.pv} visitors
+																p.darkbule(style="margin-bottom:2px;") 
+																	<i class="fa fa-clock-o" aria-hidden="true"></i>
+																	| #{moment(mv.meta.updateAt.toString()).format('YYYY/MM/DD HH:mm:ss')}
+															//- div.icon
+															//- 	i.ion.ion-bag
+															//- a.small-box-footer(href="/movie/#{mv.id}")
+															//- 	More please score for the v
+															//- 	i.fa.fa-arrow-circle-right
+
+

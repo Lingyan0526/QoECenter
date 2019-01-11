@@ -1,0 +1,25 @@
+extends ../layoutGl.jade
+
+block content
+    .row
+      h2.darkbule Comments List of #{title}
+      h4.darkbule
+        i.fa.fa-area-chart 
+        |&nbsp;Total&nbsp; <span style="color:red; font-weight: bold;">#{comments.length}</span> &nbsp;items
+      table.table.table-hover.table-bordered
+        thead
+          tr
+            th Id
+            th ip
+            th address
+            th Setup Time
+            th Show Detail
+         tbody
+          each comment,index in comments
+            tr(class="item-id-#{comment._id}")
+              td #{index+1}
+              td #{comment.ip}
+              td #{comment.address}
+              td #{moment(comment.meta.createAt.toString()).format('YYYY/MM/DD HH:mm:ss')} 
+              td: a.btn.btn-primary(target-"_blank",href="/page/userInfo/detail/#{comment._id}") Detail
+

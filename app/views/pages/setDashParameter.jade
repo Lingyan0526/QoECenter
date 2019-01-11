@@ -1,0 +1,88 @@
+extends ../layoutDash.jade
+
+block content
+    .row
+      .col-md-12
+            h2.darkbule Dash Video
+            h5.darkbule Edit the dash parameters for video.
+            form#DashParameter.form-horizontal(method="post",action="/gl/dash/saveDashParameter")
+              input(type="hidden",name="movie[_id]",value="#{movie._id}")
+              .form-group
+                .col-sm-2.control-label(for="inputTitle") Video Name
+                .col-sm-4
+                  input#inputTitle.form-control(type="text",name="movie[title]",value="#{movie.title}")
+              .form-group
+                .col-sm-12
+                  legend
+                label.col-sm-3.control-label(for="inputBandwidth") Parameters for Dash
+
+              .form-group.raw
+                .col-sm-2.control-label(for="inputMVwidth") Kinds of Bitrate
+                .col-sm-3
+                  input#inputMVwidth.form-control(type="text",name="dashParams[kinds]", placeholder="(range:1 - 10, best: 3,4 or 5)")
+
+              .form-group.raw
+                .col-sm-12
+                  legend
+                h5.darkbule Range of Bitrate. (will to be equally divided by the above values)
+                .col-sm-12
+                
+                .col-sm-2.control-label(for="inputMVFps") Min Bitrate
+                .col-sm-3
+                  .input-group
+                    input#inputMVFps.form-control(type="text",name="dashParams[minBit]", placeholder="min bitrate (default: 500kbps)")
+                    span.input-group-addon bps           
+                .col-sm-2.control-label(for="inputMVBps") Max Bitrate
+                .col-sm-3
+                  .input-group
+                    input#inputMVBps.form-control(type="text",name="dashParams[maxBit]", placeholder="max bitrate (default: 2mbps)")
+                    span.input-group-addon bps 
+
+              .form-group.raw
+                .col-sm-2.control-label(for="inputMVFps") Audio Bitrate
+                .col-sm-3
+                  .input-group
+                    input#inputShowdelay.form-control(type="text",name="dashParams[aBit]", placeholder="Audio bitrate (default: 128kbps)")
+                    span.input-group-addon bps          
+
+              .form-group.raw
+                .col-sm-2.control-label(for="inputMVIndistinct") Segment Size
+                .col-sm-3
+                  input#inputMVIndistinct.form-control(type="text",name="dashParams[segmentSize]", placeholder="segment size in frame(default: 3*fps)")
+
+              .form-group      
+                h4.darkbule.col-sm-2.control-label Video Codec
+                .col-sm-10
+                  label.radio-inline
+                    input(type="radio",class="movieType",name="dashParams[type]", checked="true") 
+                    | libx264
+                  label.radio-inline
+                    input(type="radio",class="movieType",name="dashParams[type]") 
+                    | libx265        
+
+              .form-group
+                .col-sm-offset-9.col-sm-2
+                  button.btn.btn-primary(type = "button" onclick="submitForm()") Submit
+          #commentModal.modal.fade
+                          .modal-dialog
+                            .modal-content
+                              .modal-header
+                                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                  span(aria-hidden="true")
+                                    &times;
+                                h4.modal-title
+                                  Modal Upload Progress
+                              .modal-body
+                                p
+                                  One Ready, start uploading...
+                                .progress
+                                  #pBar.progress-bar.progress-bar-success.progress-bar-striped.active(role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 1%;")
+                                    span
+                                      Two 1%
+
+                              .modal-footer
+                                //- #okButton.button.btn.disabled.btn-default(type="button" data-dismiss="modal" onclick="location.href='/gl/movie'") 确认
+                                #okButton.button.btn.disabled.btn-default(type="button" data-dismiss="modal" onclick="submitOK()") Finish
+
+          script(src="/js/setDashParameter.js")
+        

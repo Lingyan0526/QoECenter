@@ -1,0 +1,32 @@
+extends ../layoutGl.jade
+
+block content
+    .row
+          h2.darkbule Evaluation Data List
+          .form-group
+            .col-sm-12
+              legend
+              table.table.table-hover.table-bordered
+                thead
+                  tr
+                    th type
+                    th file
+                  tbody
+                    each item in files
+                      tr
+                        td #{item.name}
+                        td 
+                          a(target="_blank",href="/gl/movie/analysis/#{item.file}" style="text-decoration: underline") #{item.file}
+                        
+            //- each item in files
+            //-   td
+            //-     a(target="_blank",href="/gl/movie/analysis/#{item}" style="text-decoration: underline") #{item}
+               
+
+          .form-group
+            .col-sm-12
+              legend
+
+          h3.col-sm-offset-8
+            a.btn.btn-success(href="/gl/movie") go back
+

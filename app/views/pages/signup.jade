@@ -1,0 +1,56 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible",content="IE=edge")
+    meta(view="viewport",content="width=device-width,initial-scale=1")
+    title QoECenter
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="/css/form-elements.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  body
+    div.top-content
+      div.inner-bg
+        div.container
+          div.row
+            div.col-sm-8.col-sm-offset-2.text
+              div.intro-message
+                h1
+                  strong QoECenter
+                div.description
+                  p Welcome to register for site access. Please follow the instructions and complete your registration. 
+          div.row
+            div.col-sm-6.col-sm-offset-3.form-box
+              div.form-top
+                div.form-top-left
+                  h3 Welcome to register on our site
+                  p Enter your username and password to log on:
+                div.form-top-right
+                  i.fa.fa-lock
+              div.form-bottom
+                form(method="POST",action="/user/signup")
+                  div.form-group
+                    label.sr-only Username
+                    input#signinName.form-control(type="text" name="user[name]" placeholder="Username...")
+                  div.form-group
+                    label.sr-only Password
+                    input#signinPassword.form-username.form-control(type="password" name="user[password]" placeholder="Password...")
+                  div.form-group
+                    button.btn.btn-success(type="submit") Sign up
+                  div.form-group
+                    button.btn.btn-success(type="button" onclick="signin()") Sign in
+                  h4 <a target="_blank" href="/">Back Homepage</a> 
+                    i.fa.fa-home
+    footer
+      div.container
+        .row  
+          .col-lg-12
+          p Copyright &copy; QoE Team of BUPT 2016. All Rights Reserved
+    script(src="/js/jquery.js")
+    script(src="/js/bootstrap.min.js")
+    script(src="/js/jquery.backstretch.min.js")
+    script(src="/js/signup.js")
+

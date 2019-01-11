@@ -1,0 +1,60 @@
+
+extends ../layoutDash.jade
+
+block content
+    .row
+          h2.darkbule Video List
+
+          .form-group
+            div
+              h3(style="float:left;")
+                a.btn.btn-success(href="/gl/dash/add") New Dash Video
+            
+              //- h3(style="float:left;margin-left: 20px;")
+              //-   a.btn.btn-success(onclick="createVideosInfomation()") Download Informations of Video
+
+              //- h3(style="float:left;margin-left: 20px;")
+              //-   a.btn.btn-success(onclick="getAllComments()") Download All Comments
+
+              //- h3(style="float:left;margin-left: 20px;")
+              //-   a.btn.btn-success(onclick="getHomePagePVInfo()") Download HomePage PV Info
+
+              //- h3(style="float:left;margin-left: 20px;")
+              //-   a.btn.btn-success(onclick="getUserPagePVInfo()") Download UserPage PV Info
+          .form-group
+            .col-sm-12
+              legend
+              h4.darkbule
+                i.fa.fa-area-chart 
+                |&nbsp;Dash Videos: Total&nbsp; <span style="color:red; font-weight: bold;">#{movies.length}</span> &nbsp;items
+          table.table.table-hover.table-bordered(style="table-layout:fixed")
+            thead
+              tr
+                th(style="width:350px;white-space:nowrap;overflow:hidden; text-overflow:ellipsis;") Name
+                th Viewers
+                th Comments
+                th(style="width:150px") Evaluation Data
+                //- th View Comments
+                th(style="width:180px") Parameter settings
+                th(style="width:180px") Dash settings
+                th(style="width:95px") Delete
+             tbody
+               each item in movies
+                 tr(class="item-id-#{item._id}")
+                   td(style="width:300px;white-space:nowrap;overflow:hidden; text-overflow:ellipsis;") 
+                    a(target="_blank",href="../gl/movieInfo/#{item._id}" style="text-decoration: underline") #{item.title}
+                   td 
+                    a(target="_blank",href="/movie/userInfo/#{item._id}" style="text-decoration: underline") #{item.pv}
+                   td 
+                    a(target="_blank",href="../movie/comment/#{item._id}" style="text-decoration: underline") #{item.comments}
+                   //- td #{item.ti}
+                   //- td #{item.si}
+                   //- td #{moment(item.meta.createAt.toString()).format('YYYY/MM/DD HH:mm:ss')} 
+                   td: a.btn.btn-info(target="_blank") Evaluation Data
+                   //- td: a.btn.btn-info(target="_blank",href="../movie/comment/#{item._id}") Comments
+                   td: a.btn.btn-primary(target="_blank",href="/gl/dash/setparams/#{item._id}") Parameter settings
+                   td: a.btn.btn-primary(target="_blank",href="/gl/dash/setDashParams/#{item._id}") Dash settings
+                   td: button.btn.btn-danger.del(type="button",data-id="#{item._id}") Delete      
+
+          script(src="/js/dashVideo.js")
+

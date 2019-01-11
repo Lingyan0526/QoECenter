@@ -1,0 +1,151 @@
+extends ../layoutGl.jade
+
+block content
+    .row
+            h2.darkbule the Environment Context of Comment
+            form#NetWork.form-horizontal(method="post",action="/gl/movie/saveNetwork")
+              //- input(type="hidden",name="movie[_id]",value="#{movie._id}")
+              .form-group
+                h4.darkbule.col-sm-2.control-label(for="inputTitle") Video Name
+                .col-sm-4.pull-left
+                  input#inputTitle.form-control(readonly="readonly" type="text",name="movie[title]",value="#{movie.title}")
+              //- .form-group
+              //-   label.col-sm-2.control-label(for="inputCates") 视频类别
+              //-   .col-sm-6
+              //-     input#inputCates.form-control(type="text",name="mCates[title]",value="#{mCates.title}")
+              .form-group
+                .col-sm-12
+                  legend
+                h3.darkbule.col-sm-2.control-label(for="inputBandwidth") Score
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="inputBandwidth") Video Content
+                .col-sm-3
+                  .input-group
+                    input#inputTimedelay.form-control(readonly="readonly" type="text",name="commentInfo[vcontent]",value="#{commentInfo.vcontent}")
+                h4.darkbule.col-sm-2.control-label(for="inputBandwidth") Video Quality
+                .col-sm-3
+                  .input-group
+                    input#inputTimedelay.form-control(readonly="readonly" type="text",name="commentInfo[clarity]",value="#{commentInfo.clarity}")
+              .form-group
+                h4.darkbule.col-sm-2.control-label(for="inputTimedelay") Video Fluency
+                .col-sm-3
+                  .input-group
+                    input#inputTimedelay.form-control(readonly="readonly" type="text",name="commentInfo[loadSpeed]",value="#{commentInfo.loadSpeed}")
+                h4.darkbule.col-sm-2.control-label(for="inputPacketloss") Overall Satisfaction
+                .col-sm-3
+                  input#inputPacketloss.form-control(readonly="readonly" type="text",name="commentInfo[quality]",value="#{commentInfo.quality}")
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="inputMVwidth") Play Time
+                .col-sm-3
+                  .input-group
+                    input#inputMVwidth.form-control(readonly="readonly" type="text",name="network[mvWidth]",value="#{commentInfo.currentTime}", placeholder="")
+                    span.input-group-addon s            
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") buffer length
+                .col-sm-3
+                  .input-group 
+                    input#inputMVheight.form-control(readonly="readonly" type="text",name="network[mvHeight]",value="#{commentInfo.bufferTime}", placeholder="")
+                    span.input-group-addon s 
+
+              .form-group
+                .col-sm-12
+                  legend
+                h3.darkbule.col-sm-3.control-label(for="") User-Viewing Activities
+
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="") Play Count
+                .col-sm-3
+                  input#inputMVPlay.form-control(readonly="readonly" type="text",name="network[playCount]",value="#{commentInfo.playCount}", placeholder="")           
+                h4.darkbule.col-sm-2.control-label(for="") Pause Count
+                .col-sm-3
+                  input#inputMVPause.form-control(readonly="readonly" type="text",name="network[pauseCount]",value="#{commentInfo.pauseCount}", placeholder="")
+
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="") FullScreenOn
+                .col-sm-3
+                  input#inputMVFullScreenOn.form-control(readonly="readonly" type="text",name="network[fullOnCount][mvWidth]",value="#{commentInfo.fullOnCount}", placeholder="")           
+                h4.darkbule.col-sm-2.control-label(for="") FullScreenOff
+                .col-sm-3
+                  input#inputMVFullScreenOff.form-control(readonly="readonly" type="text",name="network[fullOffCount]",value="#{commentInfo.fullOffCount}", placeholder="")
+
+              .form-group
+                .col-sm-12
+                  legend
+                h3.darkbule.col-sm-5.control-label(for="inputBandwidth") Browser and System Information of User
+
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="inputMVwidth") User ip
+                .col-sm-3
+                  input#inputMVwidth.form-control(readonly="readonly" type="text",name="network[mvWidth]",value="#{commentInfo.ip}", placeholder="")           
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") User address
+                .col-sm-3
+                  input#inputMVheight.form-control(readonly="readonly" type="text",name="network[mvHeight]",value="#{commentInfo.address}", placeholder="")
+
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="inputMVwidth") browser type
+                .col-sm-3
+                  input#inputMVwidth.form-control(readonly="readonly" type="text",name="network[browserInfo][mvWidth]",value="#{commentInfo.browserType}", placeholder="")           
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") browser version
+                .col-sm-3
+                  input#inputMVheight.form-control(readonly="readonly" type="text",name="network[mvHeight]",value="#{commentInfo.browserVersion}", placeholder="")
+
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="inputMVwidth") userAgent
+                .col-sm-10
+                  input#inputMVwidth.form-control(readonly="readonly" type="text",name="network[mvWidth]",value="#{commentInfo.userAgent}", placeholder="")           
+
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="inputMVwidth") cookieEnabled
+                .col-sm-3
+                  input#inputMVwidth.form-control(readonly="readonly" type="text",name="network[mvWidth]",value="#{commentInfo.cookieEnabled}", placeholder="")           
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") javaEnabled
+                .col-sm-3
+                  input#inputMVheight.form-control(readonly="readonly" type="text",name="network[mvHeight]",value="#{commentInfo.javaEnabled}", placeholder="")
+
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="inputMVwidth") platform
+                .col-sm-3
+                  input#inputMVwidth.form-control(readonly="readonly" type="text",name="network[mvWidth]",value="#{commentInfo.platform}", placeholder="")           
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") systemType
+                .col-sm-3
+                  input#inputMVheight.form-control(readonly="readonly" type="text",name="network[mvHeight]",value="#{commentInfo.systemType}", placeholder="")
+
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="inputMVwidth") pluginsCount
+                .col-sm-3
+                  input#inputMVwidth.form-control(readonly="readonly" type="text",name="network[mvWidth]",value="#{commentInfo.pluginsCount}", placeholder="")           
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") plugins
+                .col-sm-3
+                  input#inputMVheight.form-control(readonly="readonly" type="text",name="network[mvHeight]",value="#{commentInfo.plugins}", placeholder="")
+
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="inputMVwidth") userLanguage
+                .col-sm-3
+                  input#inputMVwidth.form-control(readonly="readonly" type="text",name="network[mvWidth]",value="#{commentInfo.userLanguage}", placeholder="")           
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") flash
+                .col-sm-3
+                  input#inputMVheight.form-control(readonly="readonly" type="text",name="network[mvHeight]",value="#{commentInfo.flash}", placeholder="")
+
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="inputMVwidth") screenWidth
+                .col-sm-3
+                  .input-group
+                    input#inputMVwidth.form-control(readonly="readonly" type="text",name="network[mvWidth]",value="#{commentInfo.screenWidth}", placeholder="")
+                    span.input-group-addon px            
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") screenHeight
+                .col-sm-3
+                  .input-group
+                    input#inputMVheight.form-control(readonly="readonly" type="text",name="network[mvHeight]",value="#{commentInfo.screenHeight}", placeholder="")
+                    span.input-group-addon px 
+
+              .form-group.raw
+                h4.darkbule.col-sm-2.control-label(for="inputMVwidth") colorDepth
+                .col-sm-3
+                  input#inputMVwidth.form-control(readonly="readonly" type="text",name="network[mvWidth]",value="#{commentInfo.color}", placeholder="")           
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") pixelDepth
+                .col-sm-3
+                  input#inputMVheight.form-control(readonly="readonly" type="text",name="network[mvHeight]",value="#{commentInfo.pixel}", placeholder="")
+
+          script(src="/js/setNetwork.js")
+
+
+        

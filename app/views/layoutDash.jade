@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible",content="IE=edge")
+    meta(view="viewport",content="width=device-width,initial-scale=1")
+    title QoECenter
+    link(rel="icon",href="/img/favicon.ico",type="image/x-icon") 
+    include ./includes/headcss
+    script(src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js")
+  body
+    #mainProgress
+    .body-wrap
+      include ./includes/headerDash
+    .content-section-a.page
+      .container
+        .row
+          .col-lg-12.col-sm-12
+            block content
+            include ./includes/footer
+            include ./includes/footerjs
+

@@ -1,0 +1,86 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible",content="IE=edge")
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport')
+    title QoECenter
+    link(href="/css/bootstrap.min.css" rel="stylesheet" type="text/css")
+    link(href="/css/font-awesome.min.css" rel="stylesheet" type="text/css")
+    link(href="/css/AdminLTE.css" rel="stylesheet" type="text/css")
+    link(href="/css/starability.css" rel="stylesheet" type="text/css")
+    link(href="/css/ui.css" rel="stylesheet" type="text/css")
+    link(href="/css/ui.progress-bar.css" rel="stylesheet" type="text/css")
+    link(href="/css/ios.css" rel="stylesheet" type="text/css")
+    link(rel="icon",href="/img/favicon.ico",type="image/x-icon")
+    link(href="/css/main.css" rel="stylesheet")
+    link(href="http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900" rel="stylesheet" type="text/css") 
+    script(src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js")
+  body
+    #mainProgress
+    .body-wrap
+        header
+            div.sticky-nav
+                div#logo
+                    a#goUp(href="/" title="QoECenter") QoECenter              
+                nav#menu
+                    ul#menu-nav
+                        li.dropdown
+                          a(href="/") Home
+                        li.dropdown
+                          a(href="/gl/movie") Videos
+                        li.dropdown
+                          a(href="/gl/movieCate") Video Types
+                        li.current
+                          a(href="/aboutus") about us
+                        li
+                          a(href="/logout") logout
+
+                <!-- Our Shortcodes Section -->
+        div#shortcodes
+            div.container
+                div.row
+                    div.span12
+                        div.col-md-6.col-lg-8(style="padding: 0px 0px 0px 0px;float:left;")
+                            video#video(src="/baseMovie/introduction.mp4" style="width:45%" controls="controls" preload="preload")
+                            
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") The function areas for QoECenter platform are:
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") • Controlling QoS parameters of video streaming services.
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") • Simulating the video streaming processing including video uploading, video encoding, network transmission, and terminal display.
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") • Monitoring the data in terminal, system, and end user.
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") • Providing various objective evaluation algorithms and methods in real time.
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") • Providing subjective QoE evaluation metrics on customized aspects of user perception.
+                        div.title-page.col-md-12
+                            br
+                            h2.text-title About QoECenter
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") With the development and explosion of streaming video services, videos are increasing finding their way into the day-to-day lives of people. The ever-increasing demand for providing high QoE of streaming videos motivates research on QoE modeling for video services. Over the last decade, we see the number of publications on QoE & video has a clear increasing trend.
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;")  Video's QoE is affected by several processing stages before they reach the end user. However, it is often challenging for researches to acquire and analyze data during the processing stages. The main goal of this QoECenter is to offer a basis for QoE researcher. In this center, we propose a complete platform to perform a comprehensive QoE evaluation of real/simulated video streams, and we name it "QoECenter". The platform offers three phases of QoE data acquisition and analysis: 1) content level, where we provide a content classification method based on the extracted space-time characteristic of video source ; 2) system level, where we provide graphical interfaces to control the parameters of system processing including encoding and network transmission, and provide the results of objective video quality; 3) user level, where we record and present user-viewing activities, terminal information, and collect subjective rating from the end user.
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") The proposed framework is targeted for researches who want to conduct the QoE modeling based on data acquisition and analysis during the video processing. With our tool, doing experiments under the conditions of certain control parameters of video source, video encoding and network transmission, and terminal display is as simple as running the desired set of application on a workstation.
+                            br
+                            div(align="center")
+                                img(src='/img/framework.png' alt="Framework Diagram" width='50%')
+                            br
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") “Research on Service Selection Mechanism in Integrated Network Environment”,Supported by the National Natural Science Foundation of China (Grant No. 61472047). 
+                            br
+                            div
+                                img(src='/img/nsfc.png' alt="Framework Diagram" width='30%')
+                            br
+
+                            h2.text-title Instructions
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") The QoECenter is available free of charge for educational and non-commercial purposes. In exchange, we kindly request that you make available to us the results of running the QoECenter. Please use the following references in using the platform:
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") •     L. Zhang, S. Wang, F. Yang. Towards User Quality of Experience and Selective Attention: A Subtitle-Based Measurement Study. Int'l Conf. Service Computing, 2016. 
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") •     L. Zhang, S. Wang, R. K. Wrong. Cognitively Adjusting Imprecise User Preferences for Service Selection . IEEE Trans. Network and Service Management, 2016. 
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") •     L. Zhang, S. Wang, M. Yang, Y. Guo. Service Selection and Recommendation in Integrated Network Environment [M]. American: IET, 2016.
+
+                            h2.text-title contact us
+                            h5.text-content(style="text-align:justify; text-justify:inter-ideograph;") Your comments and suggestions are welcome. Please send your comments by email:  <a class="email" target="_blank" href="mailto:lyzhang@nctu.edu.tw">lyzhang@nctu.edu.tw</a>
+                            br
+                            div(width='20%')
+                                script(type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=365&d=AtwnonysoTwsiXaU6lBxuvsG4D1K7CayC2po0LDMmj0")
+
+        footer.page
+          div.container
+            .row  
+              .col-lg-11.col-sm-12
+                p.copyright.ext-muted.small Copyright &copy; QoE Team of BUPT 2016. All Rights Reserved
+      

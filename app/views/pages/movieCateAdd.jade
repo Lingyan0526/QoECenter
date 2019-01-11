@@ -1,0 +1,107 @@
+extends ../layoutGlCates.jade
+
+block content
+    script(src="/js/movieCateAdd.js")
+    .row
+            h2.darkbule New Video Type
+            form#movieCateAddForm.form-horizontal(method="post",action="/gl/movieCate/save")
+              input(type="text",name="movieCate[_id]",value=movieCate._id, style="display: none;")
+              .form-group
+                .col-sm-12
+                  legend
+                h4.darkbule.col-sm-2.control-label(for="inputTitle") Type Name
+                .col-sm-6
+                  input#inputTitle.form-control(type="text",name="movieCate[title]",value="#{movieCate.title}")
+              //- .form-group.raw
+              //-   h4.darkbule.col-sm-2.control-label(for="inputTitle") Base Video
+              //-   .col-sm-6
+              //-     input#yuvUploadedPathInput(type="input" readonly="readonly" style="width: 500px" name="movie" value="")
+              //-     div.col-sm-4.selectHeaderLog#upContainer(style="margin-top:10px;margin-left: -15px;")
+              //-   .col-sm-2
+              //-     button.btn.btn-primary(type = "button" style="background-color:#08c; color:#fff;" onclick="uploadMV()") Choose Video
+              .form-group
+                .col-sm-12
+                  legend
+                h3.darkbule.col-sm-3.control-label(for="inputBandwidth") TI、SI values for this Type
+                
+              .form-group
+                h3.col-sm-offset-1
+                  .col-sm-1
+                    button.btn.btn-success(type="button" onclick="addTr2('tabTISI', -1)") add
+                  .col-sm-1
+                    button.btn.btn-success(type="button" onclick="delTr2()") delete
+                br
+                .col-sm-offset-1.col-sm-10
+                  table#tabTISI.table.table-hover.table-bordered
+                    thead
+                      tr
+                        th(width="5%")
+                          input#allCkb(type="checkbox")
+                        th(width="20%") TI
+                        th(width="20%") SI
+                        th Edit
+                        th Delete
+                     tbody
+                      tr
+                        td
+                          input(type='checkbox' name='ckb')
+                        td(onclick="tdclick(this)") 0
+                        td(onclick="tdclick(this)") 0
+                        td: button.btn.btn-success.del(type="button",data-id="" onclick="save_para_table()") Edit
+                        td: button.btn.btn-danger.del(type="button",data-id="" onclick="delLine(this)") Delete
+              //- .form-group
+              //-   h4.darkbule.col-sm-2.control-label(for="inputTitle") TI
+              //-   .col-sm-2
+              //-     input#movieTIInput(type="input" readonly="readonly" name="movieCate[ti]" value="#{movieCate.ti}")
+              //-   h4.darkbule.col-sm-1.control-label(for="inputTitle") SI
+              //-   .col-sm-2
+              //-     input#movieSIInput(type="input" readonly="readonly" name="movieCate[si]" value="#{movieCate.si}")
+              .form-group
+                .col-sm-offset-8.col-sm-2
+                  //- button.btn.btn-primary(type = "submitForm" style="background-color:#08c; color:#fff;") Submit
+                  button.btn.btn-primary(type = "button" onclick="submitForm()") Submit
+              .form-group
+                .col-sm-12
+                  legend
+                h3.darkbule.col-sm-2.control-label(for="inputBandwidth") Camera
+              .form-group
+                .col-sm-offset-1.col-sm-10
+                  table.table.table-hover.table-bordered
+                    thead
+                      tr
+                        th Name
+                        th Description
+                     tbody#dataTab
+                      tr
+                        td TI
+                        td Temporal perceptual Information
+                      tr
+                        td SI
+                        td Spatial perceptual Information
+                        
+            form(id="yuvUpForom" enctype='multipart/form-data' style="display:none")
+              input(type="file" id="yuvFileRealInput" name="resource")
+
+          #commentModal.modal.fade(aria-hidden="true" data-backdrop="static")
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span(aria-hidden="true")
+                      &times;
+                  h4.modal-title
+                    Modal Upload progress
+                .modal-body
+                  p
+                    One Ready, start uploading...
+                  .progress
+                    #pBar.progress-bar.progress-bar-success.progress-bar-striped.active(role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 1%;")
+                      span
+                        Two 1%
+
+                .modal-footer
+                  #okButton.button.btn.disabled.btn-default(type="button" data-dismiss="modal") Finish
+
+          
+
+        

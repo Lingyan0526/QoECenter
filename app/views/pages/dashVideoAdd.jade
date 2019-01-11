@@ -1,0 +1,113 @@
+extends ../layoutDash.jade
+
+block content
+    .row
+            h2.darkbule New Dash Video
+            form#movieAddForm.form-horizontal(method="post",action="/gl/dash/save")
+              input(type="hidden",name="movie[_id]",value=movie._id)
+              input#movieTIInput(type="hidden",name="movie[ti]",value="#{movie.ti}")
+              input#movieSIInput(type="hidden",name="movie[si]",value="#{movie.si}")
+              input#movieEDistance(type="hidden",name="movie[edistance]",value="#{movie.edistance}")
+              input#movieTypeId(type="hidden",name="movie[movieCates]",value="#{movie.movieCates}")
+              input#picUploadedPath(type="hidden",name="movie[pic]",value="#{movie.pic}")
+              .form-group
+                h4.darkbule.col-sm-2.control-label(for="inputTitle") Name
+                .col-sm-10
+                  input#inputTitle.form-control(type="text",name="movie[title]",value="#{movie.title}")
+              .form-group
+                h4.darkbule.col-sm-2.control-label(for="inputAuthor") Choose Video
+                .col-sm-10
+                  div.upload-container(style="height: 80px; width: 700px;")
+                    input#mvUploadedPathInput(type="input" readonly="readonly" style="width: 500px" name="movie[movie]" value="#{movie.movie || ''}")
+                    div.col-sm-4.selectHeaderLog#upContainer(style="margin-top:10px; margin-left: -15px;")
+                      button.btn.btn-gray(type="button" style="background-color:#08c; color:#fff;" onclick="uploadMV()")#mvkfiles Browser
+              //- .form-group
+              //-   h4.darkbule.col-sm-2.control-label(for="inputTI" type="hidden") TI
+              //-   .col-sm-2
+              //-     input#movieTIInput.form-control(type="text",name="movie[ti]",value="#{movie.ti}",readOnly=true)
+              //-   h4.darkbule.col-sm-1.control-label(for="inputSI") SI
+              //-   .col-sm-2
+              //-     input#movieSIInput.form-control(type="text",name="movie[si]",value="#{movie.si}",readOnly=true)
+              //-   h4.darkbule.col-sm-1.control-label(for="inputEDistance") EDistance
+              //-   .col-sm-2
+              //-     input#movieEDistance.form-control(type="text",name="movie[edistance]",value="#{movie.edistance}",readOnly=true)
+              //- .form-group      
+              //-   h4.darkbule.col-sm-2.control-label Video Type
+              //-   .col-sm-10
+              //-     each cat in cates
+              //-       label.radio-inline
+              //-            input(type="radio",class="movieType",name="movie[movieCates]", value="#{cat._id}" )
+              //-            | #{cat.title}
+
+              .form-group
+                br
+                .col-sm-12
+                  legend
+                h3.darkbule.col-sm-3.control-label(style="border-left:0.5px solid #000;") Video Attributes :
+              .form-group.raw          
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") Duration
+                .col-sm-3
+                  input#inputMVDuration.form-control(readonly="readonly",name="movie[duration]",type="text",value="#{movie.duration}", placeholder="")
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") Size
+                .col-sm-3
+                  input#inputMVSize.form-control(readonly="readonly",name="movie[size]",type="text",value="#{movie.size}", placeholder="")
+              .form-group.raw          
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") Width
+                .col-sm-3
+                  input#inputMVWidth.form-control(readonly="readonly",name="movie[width]",type="text",value="#{movie.width}", placeholder="")
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") Height
+                .col-sm-3
+                  input#inputMVHeight.form-control(readonly="readonly",name="movie[height]",type="text",value="#{movie.height}", placeholder="")
+              .form-group.raw          
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") Frame Rate
+                .col-sm-3
+                  input#inputMVFrate.form-control(readonly="readonly",name="movie[fps]",type="text",value="#{movie.fps}", placeholder="")
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") Bit Rate
+                .col-sm-3
+                  input#inputMVBrate.form-control(readonly="readonly",name="movie[bps]",type="text",value="#{movie.bps}", placeholder="")
+              .form-group.raw          
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") Codec Name
+                .col-sm-3
+                  input#inputMVCodec.form-control(readonly="readonly",name="movie[codec_name]",type="text",value="#{movie.codec_name}", placeholder="")
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") Pixel Format
+                .col-sm-3
+                  input#inputMVPFormat.form-control(readonly="readonly",name="movie[pix_fmt]",type="text",value="#{movie.pix_fmt}", placeholder="")
+              .form-group.raw          
+                h4.darkbule.col-sm-2.control-label(for="inputMVheight") Format
+                .col-sm-3
+                  input#inputMVFormat.form-control(readonly="readonly",name="movie[format_name]",type="text",value="#{movie.format_name}", placeholder="")
+              .form-group
+                h4.darkbule.col-sm-2.control-label(for="inputContent") Description
+                .col-sm-10
+                  textarea#inputContent.form-control(name="movie[content]",value="#{movie.content}",rows="10") #{movie.content}
+
+              .form-group
+                .col-sm-offset-11.col-sm-2.pull-right
+                  button.btn.btn-primary(type = "button" onclick="submitForm()") Submit
+
+          form(id="mvUpForom" enctype='multipart/form-data' style="display:none")
+            input(type="file" id="mvFileRealInput" name="resource" )
+        
+          #commentModal.modal.fade(aria-hidden="true" data-backdrop="static")
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span(aria-hidden="true")
+                      &times;
+                  h4.modal-title
+                    Modal Upload progress
+                .modal-body
+                  p
+                    One Ready, start uploading...
+                  .progress
+                    #pBar.progress-bar.progress-bar-success.progress-bar-striped.active(role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 1%;")
+                      span
+                        Two 1%
+
+                .modal-footer
+                  #okButton.button.btn.disabled.btn-default(type="button" data-dismiss="modal") Finish
+          
+          script(src="/js/dashVideoUpload.js")
+
+        

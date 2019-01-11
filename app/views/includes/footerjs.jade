@@ -1,0 +1,132 @@
+script(src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js")
+script(src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js")
+script(src="/js/prettify.js")
+script(src="/js/lightHeight.js")
+script(src="/js/bootstrap-datetimepicker.js")
+script(src="/js/bootstrap-datetimepicker.zh-CN.js")
+script(src="/js/plupload.full.min.js")
+script(src="/js/qiniu.js")
+script.
+  (function () {
+        // 获取进度条 div
+        var $progress = document.getElementById('mainProgress');
+        // 初始进度，1%
+        var progress = 1;
+        // 生成随机数
+        var random = function(min, max){
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        };
+        // 跑进度
+        var onprogress = function () {
+            // 随机时间
+            var timeout = random(10, 30);
+            setTimeout(function () {
+                // 如果页面加载完毕，则直接进度到 100%
+                if(window.loaded){
+                    $progress.style.width = '100%';
+                    setTimeout(function(){
+                        $progress.style.display = 'none';
+                    }, 1000);
+                    return;
+                }
+                // 随机进度
+                progress += random(1, 5);
+                // 随机进度不能超过 98%，以免页面还没加载完毕，进度已经 100% 了
+                if(progress > 98){
+                    progress = 98;
+                }
+                $progress.style.width = progress + '%';
+                onprogress();
+            }, timeout);
+        };
+        // 开始跑进度
+        onprogress();
+        window.onload = function(){
+            window.loaded = true;
+        };
+  })();
+  $(document).ready(function() {
+
+    $("#top a[href*=5592939ac976c530190f7bc2]").attr({"href":"/lvxing.html","target":"_blank"});
+
+    var html = "<div id=\"layer\" style=\"position:fixed;_position:absolute;z-index:200;display:none;width:68px; height:68px; bottom:20px;right:5px;opacity:0.75;\">";
+    html += "<a href=\"javascript:void(0);\" title=\"返回顶部\">";
+    html += "<span style=\"width:68px;height:68px;display:block; margin-bottom:7px;-webkit-transition:1s;-moz-transition:1s;transition:1s;background-color: transparent 9; background:#ddd url(http://7xjao4.com1.z0.glb.clouddn.com/r_top.png) no-repeat center center;-moz-border-radius:15px;-webkit-border-radius:15px;border-radius:15px;\"></span>";
+    html += "</a>";
+    html += "</div>";
+    $("body").append(html);
+    $("#layer span").mouseover(function() { $(this).css("background-color", "#999"); }).mouseout(function() { $(this).css("background-color", "#ddd"); });
+    $("#layer span").click(function() {
+      $("html,body").animate({ scrollTop: "0px" }, 500);
+      return false;
+    });
+    $(window).scroll(function() {
+      if ($(document).scrollTop() > 100) {
+        $("#layer").fadeIn("slow");
+        return false;
+      } else {
+        $("#layer").fadeOut("fast");
+        return false;
+      }
+    });
+    
+    $("#extendShow").click(function(){
+      console.log($("#extendShow").title);
+      if($("#extendShow").attr("title") == "扩展显示"){
+        $(".col-md-8").animate({ 
+          width: "100%",
+        }, 500 );
+        $(".col-md-4").hide();
+        $("#extendShow").attr("title","收缩显示");
+        $("#extendShow").removeClass("fa-expand");
+        $("#extendShow").addClass("fa-compress");
+      }else{
+        $(".col-md-8").animate({ 
+          width: "66.66666667%",
+        }, 500 );
+        $(".col-md-4").show();
+        $("#extendShow").attr("title","扩展显示");
+        $("#extendShow").removeClass("fa-compress");
+        $("#extendShow").addClass("fa-expand");
+      }
+     
+    });
+
+     $(".artical-content").find("h2,h3,h4,h5,h6").each(function(i,item){
+          var tag = $(item).get(0).localName;
+          $(item).attr("id","wow"+i);
+          $(".AnchorContent").append('<li><a class="anchor-link" href="#wow'+i+'">'+$(this).text()+'</a></li>');     
+          $(".newh2").css("margin-left",0);     
+          $(".newh3").css("margin-left",20);     
+          $(".newh4").css("margin-left",40);     
+          $(".newh5").css("margin-left",60);     
+          $(".newh6").css("margin-left",80); });
+
+  });
+  window.onscroll = function(){
+      if ($(document).scrollTop() > 500)
+      {
+        $(".BlogAnchor").addClass('floatFixed');
+      }else{
+        $(".BlogAnchor").removeClass('floatFixed');
+      }
+    }
+
+  $(window).scroll(function(){
+    var scrollTo = $(window).scrollTop(),
+        docHeight = $(document).height(),
+        windowHeight = $(window).height();
+
+    scrollPercent = (scrollTo / (docHeight-windowHeight)) * 100;
+    scrollPercent = scrollPercent.toFixed(1);
+
+    var scrollWidth = scrollPercent+"%";
+    $('#scrollProgress').css("width",scrollWidth);
+  }).trigger('scroll');
+
+  $(".form_date").datetimepicker({
+    format: "yyyy-mm-dd",
+    autoclose: true,
+    todayBtn: true,
+    pickerPosition: "bottom-left"
+  });  

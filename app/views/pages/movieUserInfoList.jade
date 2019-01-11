@@ -1,0 +1,47 @@
+extends ../layoutGl.jade
+
+block content
+    .row
+          h2.darkbule Comments List of #{movie.title}
+          h4.darkbule
+            i.fa.fa-area-chart 
+            |&nbsp;Total&nbsp; <span style="color:red; font-weight: bold;">#{comments.length}</span> &nbsp;items
+          table.table.table-hover.table-bordered
+            thead
+              tr
+                th Id
+                th Video Content
+                th Video Quality
+                th Video Fluency
+                th Overall Satisfaction
+                th Setup Time
+                th Show Detail
+             tbody
+               each comment,index in comments
+                 tr(class="item-id-#{comment._id}")
+                   td #{index+1}
+                   td #{comment.vcontent}
+                   td #{comment.clarity}
+                   td #{comment.loadSpeed}
+                   td #{comment.quality}
+                   td #{moment(comment.meta.createAt.toString()).format('YYYY/MM/DD HH:mm:ss')} 
+                   td: a.btn.btn-primary(target-"_blank",href="/gl/userInfo/detail/#{movie._id}/#{comment._id}") Detail
+
+              #delModal.modal.fade
+              .modal-dialog
+                .modal-content
+                  .modal-header
+                    button.close(type="button" data-dismiss="modal" aria-label="Close")
+                      span(aria-hidden="true") &times;
+                    h4.modal-title
+                      Modal Notice:
+                  .modal-body
+                    p
+                      One Deleted!!!
+                  .modal-footer
+                    button.btn.btn-default(type="button" data-dismiss="modal" )
+                      Close Close
+                  
+
+          script(src="/js/movie.js")
+

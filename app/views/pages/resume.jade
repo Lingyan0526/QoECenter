@@ -1,0 +1,457 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible",content="IE=edge")
+    meta(view="viewport",content="width=device-width,initial-scale=1")
+    title QoECenter
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+    //- <link href="css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- add by lxd 2017/01/07 -->
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style1.css">
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+
+    <!-- Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
+    script(src="js/jquery.min.js")
+    script(src="/js/index.js")
+    style
+      .main{width:"100%";height:auto;}
+      .left{width:"50%";height:auto;}
+      .right{width:"50%";height:auto;margin-left:10px;}
+      .left,#right{float:left;}
+  body
+    div#fh5co-portfolio
+      div.col-md-2.col-md-push-9.form-group(style="width:240px;height:30px;")
+        label#language.col-sm-5.control-label(style="font-weight: 200;color: #333333;text-align:right;width:80px;height:30px;padding: 3px 0 0 0;") Language：
+        div.col-sm-7(style="width:100px;height:30px")
+          select#ddlSomoveLanguage.form-control1.left(onchange="chgLang()")
+            option(value="en" style="font-weight: 200;color: #333333;") English
+            option(value="ch" style="font-weight: 200;color: #333333;") 中文 
+      div.container(style='padding: 61.8px 0 0 0;')
+        div.row
+          h2#resume(style='text-align:center') Resume
+          br
+          .col-sm-12
+            legend
+          div(style='padding: 15px 0 0 0;')
+            //- div.col-md-3.col-md-push-9.animate-box(data-animate-effect="fadeInRight")
+            //-   img.img-responsive(src="img/zly.png" alt="work")
+            div.col-md-9.animate-box(data-animate-effect="fadeInLeft")
+              div
+                div
+                  ul.list-nav
+                    h2#name LingYan Zhang
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#birthT(style="font-weight: 400;color: #595959;") Date of Birth:  
+                        font#birthV(style="font-weight: 200;color: #333333;") 1991.05
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#mobileT(style="font-weight: 400;color: #595959;") Mobile: 
+                        font#mobileV(style="font-weight: 200;color: #333333;")  （+886）0938631633
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#emailT(style="font-weight: 400;color: #595959;") Mail: 
+                        font(style="font-weight: 200;color: #333333;")  <a class="email-blue" target="_blank" href="mailto:lyzhang@nctu.edu.tw">lyzhang@nctu.edu.tw</a>
+                    span(style="float:left;")
+                      i.fa.fa-circle.silver
+                    div.indexh2
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#indexT(style="font-weight: 400;color: #595959;") Homepage: 
+                        font(style="font-weight: 200;color: #333333;")  <a class="email-blue" target="_blank" href="/">http://www.qoecenter.com/lingyanzhang</a>
+                    br
+            span.col-md-3.animate-box(data-animate-effect="fadeInRight")
+              img.img-responsive(src="img/zly.png" alt="work")
+          div
+            div.col-md-12.animate-box(data-animate-effect="fadeInRight")
+              div.context
+                ul.list-nav
+                  h4#education Education
+                  span(style="float:left;")
+                    i.fa.fa-mortar-board.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 200;color: #333333;") 2013.09–2018.06 
+                      font#eTitle1_1(style="font-weight: 400;color: #000000;") Ph.D. Program, Computer Science and Technology, State Key Laboratory of Networking and Switching Technology, 
+                      font#eTitle1_2(style="font-weight: 200;color: #333333;") Beijing University of Posts and Telecommunications, China
+                  span(style="float:left;")
+                    i.fa.fa-mortar-board.silver
+                  div
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 200;color: #333333;") 2009.09–2013.06 
+                      font#eTitle2_1(style="font-weight: 400;color: #000000;") B.S., Network Engineering, Dept. of Computer Science, 
+                      font#eTitle2_2(style="font-weight: 200;color: #333333;") Beijing University of Posts and Telecommunications, China
+                  br
+          div(style='padding: 15px 0 0 0;')
+            div.col-md-12.animate-box(data-animate-effect="fadeInRight")
+              div.context
+                ul.list-nav
+                  h4#page Publication & Patent
+                  span(style="float:left;")
+                    i.fa.fa-paperclip.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 400;color: #000000;") L. Zhang, 
+                      font(style="font-weight: 200;color: #333333;")  S. Wang, F. Yang, et al. Cognitively Adjusting Imprecise User Preferences for Service Selection [J]. IEEE Trans. Network and Service Management, no. 13, vol. 13, pp. 1-13, 2017. (IF: 3.134)  
+
+                  span(style="float:left;")
+                    i.fa.fa-paperclip.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 400;color: #000000;") L. Zhang, 
+                      font(style="font-weight: 200;color: #333333;")  S. Wang, F. Yang, et al. QCSS: A QoE-aware Control Plane for Adaptive Streaming Service over Mobile Edge Computing Infrastructures [C]. Int'l Conf. Web Service, research track, 2018. (Acceptance Rate: 15%)
+
+                  span(style="float:left;")
+                    i.fa.fa-paperclip.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 400;color: #000000;") L. Zhang, 
+                      font(style="font-weight: 200;color: #333333;")  S. Wang, F. Yang, R. N. Chang. QoECenter: A Visual Platform for QoE Evaluation of Streaming Video Service [C]. Int'l Conf. Web Service, research track, pp. 212-219, 2017. (Acceptance Rate: 20%)
+
+                  span(style="float:left;")
+                    i.fa.fa-paperclip.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 400;color: #000000;") L. Zhang, 
+                      font(style="font-weight: 200;color: #333333;")  S. Wang, F. Yang. Towards User Quality of Experience and Selective Attention: A Subtitle-Based Measurement Study [C]. Int'l Conf. Service Computing, pp.872-875, 2016.
+
+                  span(style="float:left;")
+                    i.fa.fa-paperclip.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 400;color: #000000;") Lingyan Zhang, 
+                      font(style="font-weight: 200;color: #333333;")  Shangguang Wang, Ao Zhou, et al. QoECenter: A QoE Evaluation Platform for Adaptive Streaming Video Services Using DASH [J]. IEEE Transactions on Service Computing. (under review)
+
+                  span(style="float:left;")
+                    i.fa.fa-paperclip.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 400;color: #000000;") L. Zhang, 
+                      font(style="font-weight: 200;color: #333333;")  S. Wang, M. Yang, Y. Guo. Service Selection and Recommendation in Integrated Network Environment [M]. Book Chapter, IET Publisher, Stevenage, United Kingdom, 2017.
+
+                  span(style="float:left;")
+                    i.fa.fa-paperclip.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 200;color: #333333;") S. Wang, T. Lei,
+                      font(style="font-weight: 400;color: #000000;")  L. Zhang, 
+                      font(style="font-weight: 200;color: #333333;")  et al. Offloading Mobile Data Traffic for QoS-aware Service Provision in Vehicular Cyber-Physical Systems. Future Generation Computer Systems, vol. 61, pp. 118-127, 2016. (IF: 3.997)
+
+                  span(style="float:left;")
+                    i.fa.fa-paperclip.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 200;color: #333333;") Jie Wei, Shangguang Wang,
+                      font(style="font-weight: 400;color: #000000;")  Lingyan Zhang, 
+                      font(style="font-weight: 200;color: #333333;")  S. Wang, F. Yang. Towards User Quality of Experience and Selective Attention: A Subtitle-Based Measurement Study [C]. Int'l Conf. Service Computing, pp.872-875, 2016.
+
+                  span(style="float:left;")
+                    i.fa.fa-paperclip.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 200;color: #333333;") Jie Wei, Shangguang Wang,
+                      font(style="font-weight: 400;color: #000000;")  Lingyan Zhang, 
+                      font(style="font-weight: 200;color: #333333;")  et al. Minimizing Data Transmission Latency by Bipartite Graph in MapReduce [C]. IEEE Int'l Conf. CLUSTER Computing, pp:521-522, 2015.
+
+                  span(style="float:left;")
+                    i.fa.fa-paperclip.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font(style="font-weight: 200;color: #333333;") 孙其博，
+                      font(style="font-weight: 400;color: #000000;")  张凌燕， 
+                      font(style="font-weight: 200;color: #333333;")  王尚广. 一种虚拟机部署方法: 中国, CN201510030371.9[P], 2015-01-21.
+                  br
+          div(style='padding: 15px 0 0 0;')
+            div.col-md-12.animate-box(data-animate-effect="fadeInRight")
+              div.context
+                ul.list-nav
+                  h4#experience Project Experience
+                  span(style="float:left;")
+                    i.fa.fa-pencil-square-o.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#expTime1.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2015.10-present 
+                      font#expTitle1.col-md-10(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") QoE Platform for Streaming Video Services (www.qoecenter.com)
+                    span(style="float:left;")
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#expDesc1.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") • Directed the project (including organizing project schedule, supervising task completion, and demonstrating contributions) • Provided source video classification, QoS realization of encoding and network transmission, and context-aware user experience data gathering and analysis • Implemented HTTP-based content control of dynamic adaptive streaming video service, DASH content generation, and MPD file generation. 
+                      br
+                    br
+                  br
+
+                  span(style="float:left;")
+                    i.fa.fa-pencil-square-o.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2017.07-2017.09 
+                      font#expTitle2.col-md-10(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") Geospatial Information Analysis (IBM T.J. Watson Research Center) 
+                    span(style="float:left;")
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#expDesc2.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") • Provided extensible API for big data management and storage based on geospatial information analysis • Analyzed quality of service based on function and performance testing • Supervised progress completion and wrote project patents and papers.
+                  br
+
+                  span(style="float:left;")
+                    i.fa.fa-pencil-square-o.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#expTime3.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2016.01-present 
+                      font#expTitle3.col-md-10(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") Study on Quality of Selection Based on Mobile Internet
+                    span(style="float:left;")
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#expDesc3.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") • Managed QoE of streaming video services under mobile edge environment • Designed an edge-cloud algorithm to guarantee overload balancing and quality efficiency improvement • Developed a bit-rate adaptive algorithm based on HTTP dynamic streaming videos to improve mobile terminal QoE.
+                  br
+
+                  span(style="float:left;")
+                    i.fa.fa-pencil-square-o.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#expTime4.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2015.01-present
+                      font#expTitle4.col-md-10(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") Service Selection Mechanism in Converged Network Environment
+                    span(style="float:left;")
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#expDesc4.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") • Directed the research on personalize service selection based on user preference • Led the research on service of cognition based on user historical data • Co-authored and published related surveys on the service selection and service recommendation.
+                  br
+
+                  span(style="float:left;")
+                    i.fa.fa-pencil-square-o.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2014.01-2016.12
+                      font#expTitle5.col-md-10(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") Brain Mechanism for Risk Decision and Service Selection
+                    span(style="float:left;")
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#expDesc5.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") • Directed the research on service selection, including managing the connection-oriented network service, analyzing the relationship of risk decision impact with QoE indices • Established a user-experience QoE model based on the brain cognition for achieving optimum service selection.
+                  br
+          div(style='padding: 15px 0 0 0;')
+            div.col-md-12.animate-box(data-animate-effect="fadeInRight")
+              div.context
+                ul.list-nav
+                  br
+                  h4#ice Internship & Competition Experience
+                  span(style="float:left;")
+                    i.fa.fa-key.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2017.07-2017.09
+                      font#iceTitle1.col-md-10(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") Intern in IBM T.J. Watson Research Center
+                    span(style="float:left;")
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#iceDesc1.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") • Participated in “Physical Analytics Integrated Data Repository and Services” project • Responsible for function and performance testing, API simplification and performance improvement • Wrote project patents and papers from the perspective of service computing
+                    br
+
+
+                  span(style="float:left;")
+                    i.fa.fa-key.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2014.08-2014.09
+                      font#iceTitle2.col-md-10(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") Intern in China Mobile
+                    span(style="float:left;")
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#iceDesc2.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") • participated in content production, market research, and event planning of campus publicity and brand promotion activities • Accomplished campus promotion activities in Beijing Language and Culture University and won the best performance award
+                    br
+                  
+                  span(style="float:left;")
+                    i.fa.fa-key.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2012.07-2012.12
+                      font#iceTitle3.col-md-10(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") Intern in Sina Weibo
+                    span(style="float:left;")
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#iceDesc3.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") • Participated in demand analysis, test cases and scenario design and run, test development platform management, test results summary, user feedback collection and organization • Accomplished four versions of Sina Weibo client with the demand analysis, test development and online feedback summary
+                    br
+                  
+                  span(style="float:left;")
+                    i.fa.fa-key.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2016.10 
+                      font#iceTitle4.col-md-10(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") Services Society Scientist Young Forum Research Competition
+                    span(style="float:left;")
+                      p(style="text-align:justify; text-justify:inter-ideograph;")
+                        font#iceDesc4.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") • Designed and developed a QoE evaluation platform for streaming video services which had received over eight thousand visits from over 37 countries or regions in three months • Won the outstanding student award from Services Society Scientist Young Forum
+                    br
+
+                  span(style="float:left;")
+                    i.fa.fa-key.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2012.11
+                      font#iceTitle5.col-md-10(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") National Undergraduate Innovation Project Competition
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#iceDesc5.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") • Directed a four-person team, responsible for a mobile game program development on android via wireless technology • Won the national innovation award
+                    br
+
+          div(style='padding: 15px 0 0 0;')
+            div.col-md-12.animate-box(data-animate-effect="fadeInRight")
+              div.context
+                ul.list-nav
+                  br
+                  h4#pa Practical Activities
+                  span(style="float:left;")
+                    i.fa.fa-tag.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#paTime1.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2014.10-present
+                      font#paT1_sub1.col-md-10(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") Reviewer of China Communications, IOV 2014, COLLABORATECOM 2016
+                    br
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#paT1_sub2.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;")  Organizing Committee Member of IOV 2014, ICCSA 2016, COLLABORATE-COM 2016
+                    br
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#paT1_sub3.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") Publication Chair of IOV 2014, COLLABORATECOM 2016
+                    br
+
+                  span(style="float:left;")
+                    i.fa.fa-tag.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#paTime2.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2010.09-present
+                      font#paT2_sub1.col-md-10(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") Monitor, President of Sign Language Club. Minister of the Organization Department
+                    br
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#paT2_sub2.col-md-10.col-md-push-2(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") Volunteer Instructor of Museum of Beihong Xu. Volunteer of Science and Technology Promotion Project
+              br
+
+          div(style='padding: 15px 0 0 0;')
+            div.col-md-12.animate-box(data-animate-effect="fadeInRight")
+              div.context
+                ul.list-nav
+                  br
+                  h4#ha Honors & Awards
+                  span(style="float:left;")
+                    i.fa.fa-trophy.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2016 – 2017
+                      font#haT0.col-md-10(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") Outstanding Graduate Student, State Key Laboratory
+                  br
+
+                  span(style="float:left;")
+                    i.fa.fa-trophy.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2015 – 2016
+                      font#haT1.col-md-10(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") Outstanding Student Award, Services Society Scientist Young Forum
+                  br
+
+                  span(style="float:left;")
+                    i.fa.fa-trophy.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2015 – 2016
+                      font#haT2.col-md-10(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") ICCSA 2016, Outstanding Contribution Prize, ICCSA 2016,CollaborateCom 2016 & IOV 2014
+                  br
+
+                  span(style="float:left;")
+                    i.fa.fa-trophy.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2014 – 2016
+                      font#haT3.col-md-10(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") Best Graduate Student Award，BUPT & Outstanding Student Cadr，BUPT
+                  br
+
+                  span(style="float:left;")
+                    i.fa.fa-trophy.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2014 – 2016
+                      font#haT4.col-md-10(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") Best Student Award，BUPT & First-Class Scholarship, BUPT
+                  br
+
+                  span(style="float:left;")
+                    i.fa.fa-trophy.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2010 – 2016
+                      font#haT5.col-md-10(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") Best Student Award, BUPT & First-Class Scholarship，BUPT & National Innovation Award, BUPT
+                  br
+
+                  span(style="float:left;")
+                    i.fa.fa-trophy.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2011 – 2012
+                      font#haT6.col-md-10(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") Municipal Best Students Award, Education Commission of Beijing
+                  br
+
+                  span(style="float:left;")
+                    i.fa.fa-trophy.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font.col-md-2(style="font-weight: 400;color: #000000;padding: 0 0 0 0px;") 2010 – 2012
+                      font#haT7.col-md-10(style="font-weight: 200;color: #333333;padding: 0 0 0 0px;") First Place of Team Jazz Cheerleading Competition, General Administration of Sport of China
+              br
+
+          div(style='padding: 15px 0 0 0;')
+            div.col-md-12.animate-box(data-animate-effect="fadeInRight")
+              div.context
+                ul.list-nav
+                  br
+                  h4#skill Skills
+                  span(style="float:left;")
+                    i.fa.fa-thumb-tack.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#skill1(style="font-weight: 200;color: #000000;padding: 0 0 0 0px;") Proficient with C、C++、Java、Matlab
+                  span(style="float:left;")
+                    i.fa.fa-thumb-tack.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#skill2(style="font-weight: 200;color: #000000;padding: 0 0 0 0px;") Hands-on experience with Open Sources: NS2, FFmpeg, Bento4, xvid_encraw, MP4Box, X264, dash.js, Express, Jade, node.js, etc.
+                  span(style="float:left;")
+                    i.fa.fa-thumb-tack.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#skill3(style="font-weight: 200;color: #000000;padding: 0 0 0 0px;") Good command in both written and spoken English
+                  span(style="float:left;")
+                    i.fa.fa-thumb-tack.silver
+                  div.indexh2
+                    p(style="text-align:justify; text-justify:inter-ideograph;")
+                      font#skill4(style="font-weight: 200;color: #000000;padding: 0 0 0 0px;") Quick and passionate learner, detail-focused, and rigorous attitude for scientific research
+
+          div.project
+            div.col-md-2.col-md-offset-5.animate-box(data-animate-effect="fadeInRight")
+              script(type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&d=AtwnonysoTwsiXaU6lBxuvsG4D1K7CayC2po0LDMmj0")
+
+
+        div.row.copyright(style='padding: 40px 0 0 0;')
+          div.col-md-12.text-center
+            p.copyright.ext-muted.small Copyright &copy; QoE Team of BUPT 2016-2017. All Rights Reserved
+
+    script(src="js/jquery.easing.1.3.js")
+    script(src="js/bootstrap.min.js")
+    script(src="js/jquery.waypoints.min.js")
+    script(src="js/jquery.countTo.js")
+    script(src="js/jquery.magnific-popup.min.js")
+    script(src="js/magnific-popup-options.js")
+    script(src="js/main.js")
+    script(src="js/language.js")
+
+      
